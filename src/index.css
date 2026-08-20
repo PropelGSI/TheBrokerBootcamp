@@ -1657,7 +1657,7 @@ p {
     font-size: clamp(1.25rem, 6vw, 1.65rem);
   }
 
-  .availability-cue {
+  .fee-cue {
     margin-top: 0.8rem;
     padding-top: 0.65rem;
 
@@ -1728,64 +1728,100 @@ p {
 ======================================== */
 
 .registration-callout {
+  width: 100%;
+  max-width: 34rem;
+
+  margin-top: 2rem;
+  padding-top: 1.4rem;
+
+  border-top: 1px solid #4a4a4a;
+}
+
+
+/* Workshop fee label */
+
+.registration-fee-label {
+  display: block;
+
+  margin-bottom: 0.6rem;
+
+  color: #8f8f8f;
+
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  line-height: 1;
+
+  text-align: left;
+  text-transform: uppercase;
+}
+
+
+/* Workshop fee price */
+
+.registration-fee-price {
+  display: block;
+
+  margin: 0;
+
+  color: #e8f15a;
+
+  font-size: clamp(1.6rem, 2vw, 2.15rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+
+  text-align: left;
+}
+
+
+/* Payment explanation */
+
+.registration-fee-note {
+  max-width: 31rem;
+
+  margin: 0.9rem 0 0;
+
+  color: #9f9f9f;
+
+  font-size: 0.7rem;
+  font-weight: 500;
+  line-height: 1.55;
+
+  text-align: left;
+}
+
+
+/* ========================================
+   REGISTRATION FLOW
+======================================== */
+
+.registration-flow {
   display: flex;
+
   width: 100%;
   max-width: 34rem;
 
   align-items: center;
-  justify-content: space-between;
-  gap: 1.25rem;
 
-  border-top: 1px solid #4a4a4a;
-
-  padding-top: 1.25rem;
-}
-
-.registration-callout strong {
-  flex-shrink: 0;
-
-  color: #e8f15a;
-
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  line-height: 1;
-
-  white-space: nowrap;
-}
-
-.registration-callout span {
-  flex-shrink: 0;
-
-  color: #a0a0a0;
-
-  font-size: 0.66rem;
-  font-weight: 500;
-  line-height: 1.4;
-
-  text-align: right;
-
-  /* Keeps the sentence on one line on desktop */
-  white-space: nowrap;
-}
-
-.registration-flow {
-  display: flex;
-  max-width: 34rem;
-  align-items: center;
   gap: 0.9rem;
+
   margin-top: 2.75rem;
 }
 
 .registration-flow-step {
   display: flex;
+
   min-width: 0;
+
   flex-direction: column;
+
   gap: 0.45rem;
 }
 
 .registration-flow-step span {
   color: #e8f15a;
+
   font-size: 0.58rem;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -1794,31 +1830,50 @@ p {
 
 .registration-flow-step p {
   margin: 0;
+
   color: #ffffff;
+
   font-size: 0.72rem;
   font-weight: 700;
   line-height: 1.35;
+
   text-transform: uppercase;
 }
 
 .registration-flow-connector {
   flex: 1;
+
   height: 1px;
   min-width: 1.5rem;
+
   background: rgba(232, 241, 90, 0.45);
 }
 
+
+/* ========================================
+   REGISTRATION — MOBILE
+======================================== */
+
 @media (max-width: 640px) {
+
+  .registration-fee-price {
+    font-size: 1.7rem;
+  }
+
   .registration-flow {
     flex-direction: column;
+
     align-items: flex-start;
+
     gap: 0.9rem;
   }
 
   .registration-flow-connector {
     width: 1px;
     height: 1.5rem;
+
     min-width: 0;
+
     margin-left: 0.25rem;
   }
 }

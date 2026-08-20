@@ -18,23 +18,28 @@ const manifestoLines = [
 const faqs = [
   {
     question: 'Who is Brand Before You Sell for?',
-    answer: 'The workshop is intended both for people starting their real estate careers and professionals looking to take their businesses to the next level.',
-  },
-  {
-    question: 'Where will the workshop be held?',
-    answer: 'The location is still to be announced. Registered attendees will receive the venue and final attendance information by email.',
-  },
-  {
-    question: 'Is registration open?',
-    answer: 'Yes. Registration is now open for this limited-slot event. Submit the registration form and watch your inbox for confirmation and final attendance information.',
+    answer:
+      'The workshop is intended both for people starting their real estate careers and professionals looking to take their businesses to the next level.',
   },
   {
     question: 'When is the workshop?',
-    answer: 'Brand Before You Sell takes place on September 19, 2026, from 3:00 PM to 6:00 PM.',
+    answer:
+      'Brand Before You Sell takes place on October 10, 2026, from 3:00 PM to 6:00 PM.',
   },
   {
-    question: 'Has ticket pricing been announced?',
-    answer: 'Ticket information has not been announced. Register now to receive final attendance details as soon as they are available.',
+    question: 'Where will the workshop be held?',
+    answer:
+      'The location is still to be announced. Registered attendees will receive the venue and final event details by email.',
+  },
+  {
+    question: 'How much is the workshop and how do I pay?',
+    answer:
+      'The workshop fee is ₱2,500. After submitting your registration, we’ll send the payment instructions to your email. Your slot is confirmed once payment is received.',
+  },
+  {
+    question: 'Is registration open?',
+    answer:
+      'Yes. Registration is now open and slots are limited. Complete the registration form, watch your inbox for the payment instructions, and complete payment to confirm your slot.',
   },
 ]
 
@@ -251,9 +256,9 @@ function App() {
         <div className="detail-card">
           <dt>Date</dt>
           <dd>
-            SEPTEMBER
+            October
             <br />
-            19, 2026
+            10, 2026
           </dd>
         </div>
       </Reveal>
@@ -282,16 +287,14 @@ function App() {
 
       <Reveal delay={210}>
         <div className="detail-card detail-card--availability">
-          <dt>Availability</dt>
+          <dt>Workshop Fee</dt>
 
           <dd>
-            LIMITED
-            <br />
-            SLOTS
+            ₱2,500
           </dd>
 
           <span className="availability-cue">
-            REGISTER BELOW
+            Payment after registration
             <span aria-hidden="true"> ↓</span>
           </span>
         </div>
@@ -317,43 +320,54 @@ function App() {
       </div>
 
       <Reveal>
-        <p className="eyebrow">SAVE YOUR PLACE</p>
+        <p className="eyebrow">START YOUR REGISTRATION</p>
 
         <h2 id="registration-title">
           Registration is now open.
         </h2>
 
         <p className="registration-intro">
-          Register for Brand Before You Sell. We&apos;ll send your confirmation,
-          venue details, and final attendance information by email.
+          Register for Brand Before You Sell below. After submitting the form,
+          we&apos;ll email you the payment instructions and event details.
+          Your slot is confirmed once payment is received.
         </p>
 
-<div className="registration-callout">
-  <strong>LIMITED SLOTS</strong>
-  <span>Confirmation and event details will follow by email.</span>
-</div>
+        <div className="registration-callout">
+          <span className="registration-fee-label">
+            WORKSHOP FEE
+          </span>
 
-<div className="registration-flow" aria-hidden="true">
-  <div className="registration-flow-step">
-    <span>01</span>
-    <p>Complete the form</p>
-  </div>
+          <strong className="registration-fee-price">
+            ₱2,500
+          </strong>
 
-  <div className="registration-flow-connector" />
+          <p className="registration-fee-note">
+            Payment instructions will be sent by email after registration.
+            Your slot is confirmed once payment is received.
+          </p>
+        </div>
 
-  <div className="registration-flow-step">
-    <span>02</span>
-    <p>Receive confirmation</p>
-  </div>
+        <div className="registration-flow">
+          <div className="registration-flow-step">
+            <span>01</span>
+            <p>Complete the form</p>
+          </div>
 
-  <div className="registration-flow-connector" />
+          <div className="registration-flow-connector" />
 
-  <div className="registration-flow-step">
-    <span>03</span>
-    <p>Get venue details</p>
-  </div>
-</div>
-              </Reveal>
+          <div className="registration-flow-step">
+            <span>02</span>
+            <p>Receive payment details</p>
+          </div>
+
+          <div className="registration-flow-connector" />
+
+          <div className="registration-flow-step">
+            <span>03</span>
+            <p>Confirm your slot</p>
+          </div>
+        </div>
+      </Reveal>
             </div>
 
     {/* Registration form */}
@@ -547,7 +561,7 @@ function App() {
 
                 <div>
                   <span>DATE</span>
-                  <strong>SEP 19, 2026</strong>
+                  <strong>October 10, 2026</strong>
                 </div>
 
                 <div>
@@ -558,6 +572,11 @@ function App() {
                 <div>
                   <span>LOCATION</span>
                   <strong>TO BE ANNOUNCED</strong>
+                </div>
+
+                <div>
+                  <span>WORKSHOP FEE</span>
+                  <strong>₱2,500</strong>
                 </div>
 
               </div>
