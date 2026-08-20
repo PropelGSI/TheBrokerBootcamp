@@ -105,7 +105,7 @@ export function Hero({ onContact }: HeroProps) {
         <dl className="hero-details">
           <div>
             <dt>Date</dt>
-            <dd>SEP 19, 2026</dd>
+            <dd>October 10, 2026</dd>
           </div>
 
           <div>
