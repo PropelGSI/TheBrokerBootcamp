@@ -6,7 +6,7 @@ type HeroProps = {
 
 const heroImages = {
   speakers:
-    'https://jwteutzqvthyrqtbcgln.supabase.co/storage/v1/object/public/websiteimages/Website%20BrokerBootcamp/STBTPGHERO.png',
+    'https://jwteutzqvthyrqtbcgln.supabase.co/storage/v1/object/public/websiteimages/Website%20BrokerBootcamp/speakers.png',
 }
 
 export function Hero({ onContact }: HeroProps) {
