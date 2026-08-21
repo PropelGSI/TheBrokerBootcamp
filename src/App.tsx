@@ -7,6 +7,15 @@ import { Reveal } from './components/Reveal'
 import { SubmissionForm } from './components/SubmissionForm'
 import { Wordmark } from './components/Wordmark'
 import { track } from './lib/analytics'
+import {
+  EVENT,
+  EVENT_DATE_SHORT,
+  EVENT_MONTH,
+  EVENT_DAY_YEAR,
+  EVENT_TIME,
+  EVENT_PRICE,
+  EVENT_LOCATION,
+} from './config/event'
 
 const manifestoLines = [
   'Before the listings.',
@@ -24,12 +33,12 @@ const faqs = [
   {
     question: 'When is the workshop?',
     answer:
-      'Brand Before You Sell takes place on October 10, 2026, from 3:00 PM to 6:00 PM.',
+      `Brand Before You Sell takes place on ${EVENT_DATE_SHORT}, from ${EVENT_TIME}.`,
   },
   {
     question: 'Where will the workshop be held?',
     answer:
-      'The location is still to be announced. Registered attendees will receive the venue and final event details by email.',
+      `Location: ${EVENT_LOCATION}. Registered attendees will receive the venue and final event details by email.`,
   },
   {
     question: 'How much is the workshop and how do I pay?',
@@ -256,9 +265,7 @@ function App() {
         <div className="detail-card">
           <dt>Date</dt>
           <dd>
-            October
-            <br />
-            10, 2026
+              {EVENT_DATE_SHORT}
           </dd>
         </div>
       </Reveal>
@@ -266,22 +273,25 @@ function App() {
       <Reveal delay={70}>
         <div className="detail-card">
           <dt>Time</dt>
-          <dd>
-            3:00 PM
-            <br />
-            — 6:00 PM
-          </dd>
+            <dd>
+              {EVENT.time.start}
+              <br />
+              — {EVENT.time.end}
+            </dd>
         </div>
       </Reveal>
 
       <Reveal delay={140}>
         <div className="detail-card">
           <dt>Location</dt>
-          <dd>
-            TO BE
-            <br />
-            ANNOUNCED
-          </dd>
+            <dd>
+              {EVENT.locationLines.map((line, index) => (
+                <span key={line}>
+                  {line.toUpperCase()}
+                  {index < EVENT.locationLines.length - 1 && <br />}
+                </span>
+              ))}
+            </dd>
         </div>
       </Reveal>
 
@@ -290,7 +300,7 @@ function App() {
           <dt>Workshop Fee</dt>
 
           <dd>
-            ₱2,500
+            {EVENT_PRICE}
           </dd>
 
           <span className="availability-cue">
@@ -338,7 +348,7 @@ function App() {
           </span>
 
           <strong className="registration-fee-price">
-            ₱2,500
+            {EVENT_PRICE}
           </strong>
 
           <p className="registration-fee-note">
@@ -559,27 +569,27 @@ function App() {
 
               <div className="footer-event-details">
 
-                <div>
-                  <span>DATE</span>
-                  <strong>October 10, 2026</strong>
-                </div>
-
-                <div>
-                  <span>TIME</span>
-                  <strong>3:00–6:00 PM</strong>
-                </div>
-
-                <div>
-                  <span>LOCATION</span>
-                  <strong>TO BE ANNOUNCED</strong>
-                </div>
-
-                <div>
-                  <span>WORKSHOP FEE</span>
-                  <strong>₱2,500</strong>
-                </div>
-
+              <div>
+                <span>DATE</span>
+                <strong>{EVENT_DATE_SHORT}</strong>
               </div>
+
+              <div>
+                <span>TIME</span>
+                <strong>{EVENT_TIME}</strong>
+              </div>
+
+              <div>
+                <span>LOCATION</span>
+                <strong>{EVENT_LOCATION.toUpperCase()}</strong>
+              </div>
+
+              <div>
+                <span>WORKSHOP FEE</span>
+                <strong>{EVENT_PRICE}</strong>
+              </div>
+
+            </div>
 
               <a
                 className="button button--lime footer-register"

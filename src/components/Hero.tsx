@@ -1,4 +1,9 @@
 import { track } from '../lib/analytics'
+import {
+  EVENT_DATE_SHORT,
+  EVENT_TIME,
+  EVENT_LOCATION,
+} from '../config/event'
 
 type HeroProps = {
   onContact: () => void
@@ -105,17 +110,17 @@ export function Hero({ onContact }: HeroProps) {
         <dl className="hero-details">
           <div>
             <dt>Date</dt>
-            <dd>October 10, 2026</dd>
+            <dd>{EVENT_DATE_SHORT}</dd>
           </div>
 
           <div>
             <dt>Time</dt>
-            <dd>3:00–6:00 PM</dd>
+            <dd>{EVENT_TIME}</dd>
           </div>
 
           <div>
             <dt>Location</dt>
-            <dd>TO BE ANNOUNCED</dd>
+            <dd>{EVENT_LOCATION.toUpperCase()}</dd>
           </div>
         </dl>
 

@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react'
 import { track } from '../lib/analytics'
 import { Wordmark } from './Wordmark'
+import {
+  EVENT_MONTH,
+  EVENT_DAY_YEAR,
+} from '../config/event'
 
 type HeaderProps = {
   onContact: () => void
@@ -40,7 +44,7 @@ export function Header({ onContact }: HeaderProps) {
       <div className="announcement">
         <span>FIRST WORKSHOP</span>
         <span aria-hidden="true">•</span>
-        <strong>SEPTEMBER 19, 2026</strong>
+        <strong>{EVENT_MONTH}, {EVENT_DAY_YEAR}</strong>
         <span aria-hidden="true">•</span>
         <span>LIMITED SLOTS</span>
       </div>
