@@ -4,6 +4,8 @@ export type AnalyticsEvent =
   | 'mobile_sticky_register_click'
   | 'ask_question_click'
   | 'registration_form_start'
+  | 'registration_payment_step'
+  | 'registration_confirmation_step'
   | 'registration_success'
   | 'registration_error'
   | 'contact_form_start'
@@ -13,16 +15,36 @@ export type AnalyticsEvent =
 
 declare global {
   interface Window {
-    brokerBootcampAnalytics?: (event: AnalyticsEvent, properties?: Record<string, unknown>) => void
+    brokerBootcampAnalytics?: (
+      event: AnalyticsEvent,
+      properties?: Record<string, unknown>
+    ) => void
   }
 }
 
-export function track(event: AnalyticsEvent, properties?: Record<string, unknown>) {
+export function track(
+  event: AnalyticsEvent,
+  properties?: Record<string, unknown>,
+) {
   window.dispatchEvent(
-    new CustomEvent('brokerbootcamp:analytics', { detail: { event, properties } }),
+    new CustomEvent(
+      'brokerbootcamp:analytics',
+      {
+        detail: {
+          event,
+          properties,
+        },
+      },
+    ),
   )
 
-  if (import.meta.env.VITE_ANALYTICS_PROVIDER && window.brokerBootcampAnalytics) {
-    window.brokerBootcampAnalytics(event, properties)
+  if (
+    import.meta.env.VITE_ANALYTICS_PROVIDER &&
+    window.brokerBootcampAnalytics
+  ) {
+    window.brokerBootcampAnalytics(
+      event,
+      properties,
+    )
   }
 }

@@ -1666,15 +1666,19 @@ p {
   }
 }
 
-
 /* ============================================================
    08 — REGISTRATION + FORMS
 ============================================================ */
 
+
+/* ------------------------------------------------------------
+   REGISTRATION — SECTION FRAME
+------------------------------------------------------------ */
+
 .registration {
   padding: clamp(6rem, 8vw, 8.5rem) 0;
-  color: #fff;
-  background: #111;
+  color: #ffffff;
+  background: #111111;
 }
 
 .registration-grid {
@@ -1685,16 +1689,14 @@ p {
 }
 
 
-/* ========================================
-   REGISTRATION COPY
-======================================== */
+/* ------------------------------------------------------------
+   REGISTRATION — LEFT COPY
+------------------------------------------------------------ */
 
 .registration-copy {
   position: sticky;
   top: 7rem;
-
   height: fit-content;
-
   grid-column: 1 / span 5;
 }
 
@@ -1708,9 +1710,6 @@ p {
   line-height: 0.95;
 }
 
-
-/* Main paragraph under headline */
-
 .registration-copy > .reveal > p:not(.eyebrow) {
   max-width: 34rem;
   margin: 2rem 0 2.2rem;
@@ -1723,9 +1722,9 @@ p {
 }
 
 
-/* ========================================
-   REGISTRATION CALLOUT
-======================================== */
+/* ------------------------------------------------------------
+   WORKSHOP FEE — LEFT SIDE
+------------------------------------------------------------ */
 
 .registration-callout {
   width: 100%;
@@ -1736,9 +1735,6 @@ p {
 
   border-top: 1px solid #4a4a4a;
 }
-
-
-/* Workshop fee label */
 
 .registration-fee-label {
   display: block;
@@ -1752,12 +1748,8 @@ p {
   letter-spacing: 0.14em;
   line-height: 1;
 
-  text-align: left;
   text-transform: uppercase;
 }
-
-
-/* Workshop fee price */
 
 .registration-fee-price {
   display: block;
@@ -1770,12 +1762,7 @@ p {
   font-weight: 900;
   letter-spacing: -0.04em;
   line-height: 1;
-
-  text-align: left;
 }
-
-
-/* Payment explanation */
 
 .registration-fee-note {
   max-width: 31rem;
@@ -1787,14 +1774,12 @@ p {
   font-size: 0.7rem;
   font-weight: 500;
   line-height: 1.55;
-
-  text-align: left;
 }
 
 
-/* ========================================
-   REGISTRATION FLOW
-======================================== */
+/* ------------------------------------------------------------
+   REGISTRATION FLOW — LEFT SIDE
+------------------------------------------------------------ */
 
 .registration-flow {
   display: flex;
@@ -1803,7 +1788,6 @@ p {
   max-width: 34rem;
 
   align-items: center;
-
   gap: 0.9rem;
 
   margin-top: 2.75rem;
@@ -1815,7 +1799,6 @@ p {
   min-width: 0;
 
   flex-direction: column;
-
   gap: 0.45rem;
 }
 
@@ -1850,49 +1833,169 @@ p {
 }
 
 
-/* ========================================
-   REGISTRATION — MOBILE
-======================================== */
-
-@media (max-width: 640px) {
-
-  .registration-fee-price {
-    font-size: 1.7rem;
-  }
-
-  .registration-flow {
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    gap: 0.9rem;
-  }
-
-  .registration-flow-connector {
-    width: 1px;
-    height: 1.5rem;
-
-    min-width: 0;
-
-    margin-left: 0.25rem;
-  }
-}
-
-/* ========================================
+/* ------------------------------------------------------------
    FORM CARD
-   UNCHANGED
-======================================== */
+------------------------------------------------------------ */
 
 .form-card {
   grid-column: 7 / -1;
-  padding: clamp(1.25rem, 3vw, 3rem);
-  color: #111;
-  background: #fff;
+
+  width: 100%;
+
+  padding: clamp(1.5rem, 3vw, 3rem);
+
+  color: #111111;
+  background: #ffffff;
 }
 
 .submission-form {
   width: 100%;
 }
+
+
+/* ------------------------------------------------------------
+   WIZARD PROGRESS
+------------------------------------------------------------ */
+
+.registration-wizard-progress {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  width: 100%;
+
+  margin-bottom: clamp(2.5rem, 4vw, 3.5rem);
+
+  border-top: 1px solid #d7d7d7;
+  border-bottom: 1px solid #d7d7d7;
+}
+
+.registration-wizard-progress > div {
+  display: flex;
+
+  min-width: 0;
+  min-height: 4.5rem;
+
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 0.35rem;
+
+  padding: 0.85rem 1rem;
+
+  color: #999999;
+
+  border-right: 1px solid #d7d7d7;
+
+  transition:
+    color 180ms ease,
+    background-color 180ms ease;
+}
+
+.registration-wizard-progress > div:last-child {
+  border-right: 0;
+}
+
+.registration-wizard-progress span {
+  font-size: 0.55rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  line-height: 1;
+}
+
+.registration-wizard-progress strong {
+  overflow: hidden;
+
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.registration-wizard-progress > .is-active {
+  color: #111111;
+  background: #e8f15a;
+}
+
+.registration-wizard-progress > .is-complete {
+  color: #111111;
+}
+
+.registration-wizard-progress > .is-complete span {
+  color: #747a00;
+}
+
+
+/* ------------------------------------------------------------
+   WIZARD PANEL
+------------------------------------------------------------ */
+
+.wizard-panel {
+  width: 100%;
+}
+
+.wizard-panel[hidden] {
+  display: none;
+}
+
+
+/* ------------------------------------------------------------
+   WIZARD HEADING
+------------------------------------------------------------ */
+
+.wizard-heading {
+  width: 100%;
+  max-width: 36rem;
+
+  margin-bottom: 2.5rem;
+}
+
+.wizard-heading > span {
+  display: block;
+
+  margin-bottom: 0.85rem;
+
+  color: #777777;
+
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+}
+
+.wizard-heading h3 {
+  max-width: 12ch;
+
+  margin: 0;
+
+  color: #111111;
+
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 0.96;
+}
+
+.wizard-heading p {
+  max-width: 32rem;
+
+  margin: 1.1rem 0 0;
+
+  color: #666666;
+
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+
+/* ------------------------------------------------------------
+   STANDARD FORM GRID
+------------------------------------------------------------ */
 
 .form-grid {
   display: grid;
@@ -1910,14 +2013,18 @@ p {
 
 .field label {
   display: block;
+
   margin-bottom: 0.55rem;
+
+  color: #111111;
+
   font-size: 0.68rem;
   font-weight: 750;
   line-height: 1.4;
 }
 
 .field label > span:not([aria-hidden]) {
-  color: #777;
+  color: #777777;
   font-weight: 500;
 }
 
@@ -1932,8 +2039,8 @@ p {
 
   padding: 0.8rem;
 
-  color: #111;
-  background: #fff;
+  color: #111111;
+  background: #ffffff;
 
   font-size: 0.9rem;
 
@@ -1950,7 +2057,7 @@ p {
 .field input:hover,
 .field select:hover,
 .field textarea:hover {
-  border-color: #111;
+  border-color: #111111;
 }
 
 .field input:focus,
@@ -1958,7 +2065,7 @@ p {
 .field textarea:focus {
   outline: none;
 
-  border-color: #111;
+  border-color: #111111;
 
   box-shadow: 0 0 0 2px #e8f15a;
 }
@@ -1969,6 +2076,11 @@ p {
   border-color: #b42318;
 }
 
+
+/* ------------------------------------------------------------
+   FIELD ERRORS
+------------------------------------------------------------ */
+
 .field-error {
   display: block;
 
@@ -1978,21 +2090,610 @@ p {
 
   font-size: 0.68rem;
   font-weight: 650;
+  line-height: 1.4;
 }
 
 
-/* ========================================
+/* ------------------------------------------------------------
+   WIZARD ACTIONS
+------------------------------------------------------------ */
+
+.wizard-actions {
+  display: flex;
+
+  width: 100%;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  margin-top: 2.5rem;
+}
+
+.wizard-actions--end {
+  justify-content: flex-end;
+}
+
+.wizard-actions .button {
+  min-width: min(100%, 13rem);
+}
+
+.wizard-actions .button:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
+}
+
+.wizard-back {
+  min-height: 3.2rem;
+
+  border: 0;
+  border-bottom: 1px solid #111111;
+
+  padding: 0.7rem 0;
+
+  cursor: pointer;
+
+  color: #111111;
+  background: transparent;
+
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+.wizard-back:hover {
+  color: #6f7600;
+  border-color: #6f7600;
+}
+
+.wizard-back:disabled {
+  cursor: wait;
+  opacity: 0.45;
+}
+
+
+/* ============================================================
+   STEP 02 — PAYMENT
+============================================================ */
+
+
+/* ------------------------------------------------------------
+   PAYMENT TOTAL
+------------------------------------------------------------ */
+
+.payment-total {
+  display: flex;
+
+  width: 100%;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 1.25rem;
+  padding: 1.35rem 1.5rem;
+
+  color: #ffffff;
+  background: #111111;
+
+  border-radius: 4px;
+}
+
+.payment-total > div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.55rem;
+}
+
+.payment-total span {
+  color: #aaaaaa;
+
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+}
+
+.payment-total strong {
+  color: #e8f15a;
+
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 900;
+  letter-spacing: -0.055em;
+  line-height: 0.9;
+}
+
+
+/* ------------------------------------------------------------
+   PAYMENT NOT READY
+------------------------------------------------------------ */
+
+.payment-not-ready {
+  width: 100%;
+
+  margin: 1rem 0;
+  padding: 1.2rem;
+
+  border: 1px solid #c8c8c8;
+
+  color: #5f5f5f;
+  background: #f4f4f4;
+
+  font-size: 0.78rem;
+  font-weight: 650;
+  line-height: 1.55;
+}
+
+
+/* ------------------------------------------------------------
+   PAYMENT METHODS
+------------------------------------------------------------ */
+
+.payment-methods-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 1rem;
+
+  width: 100%;
+}
+
+
+/* ------------------------------------------------------------
+   PAYMENT CARD
+------------------------------------------------------------ */
+
+.payment-method {
+  display: flex;
+
+  min-width: 0;
+
+  flex-direction: column;
+
+  border: 1px solid #d0d0d0;
+  border-radius: 10px;
+
+  padding: 1rem;
+
+  color: #111111;
+  background: #ffffff;
+}
+
+
+/* ------------------------------------------------------------
+   PAYMENT CARD HEADING
+------------------------------------------------------------ */
+
+.payment-method-heading {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  padding-bottom: 0.9rem;
+
+  border-bottom: 1px solid #d8d8d8;
+}
+
+
+.payment-method-number {
+  color: #c8d31a;
+
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+
+.payment-method-heading strong {
+  font-size: 0.78rem;
+  font-weight: 900;
+  line-height: 1;
+
+  text-align: right;
+}
+
+
+/* ------------------------------------------------------------
+   QR IMAGE
+------------------------------------------------------------ */
+
+.payment-qr-link {
+  display: flex;
+
+  width: 100%;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 0.9rem;
+
+  cursor: zoom-in;
+}
+
+
+.payment-qr {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  border-radius: 7px;
+
+  object-fit: contain;
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+
+.payment-qr-link:hover .payment-qr {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 0 0 2px #e8f15a,
+    0 0.6rem 1.5rem rgba(0, 0, 0, 0.08);
+}
+
+
+/* ------------------------------------------------------------
+   CARD BOTTOM
+------------------------------------------------------------ */
+
+.payment-method-bottom {
+  display: flex;
+
+  min-height: 6.5rem;
+
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 1.25rem;
+
+  margin-top: 0.9rem;
+  padding-top: 1rem;
+
+  border-top: 1px solid #d8d8d8;
+}
+
+
+.payment-scan-copy {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.25rem;
+}
+
+
+.payment-scan-copy strong {
+  color: #111111;
+
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+
+.payment-scan-copy span {
+  color: #777777;
+
+  font-size: 0.64rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+
+/* ------------------------------------------------------------
+   VIEW FULL SIZE
+------------------------------------------------------------ */
+
+.payment-enlarge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.4rem;
+
+  padding-bottom: 0.15rem;
+
+  border-bottom: 1px solid #111111;
+
+  color: #111111;
+
+  font-size: 0.62rem;
+  font-weight: 800;
+  line-height: 1.2;
+
+  cursor: pointer;
+}
+
+
+.payment-enlarge:hover {
+  color: #717700;
+
+  border-color: #717700;
+}
+
+
+.payment-enlarge span {
+  font-size: 0.75rem;
+}
+
+
+/* ------------------------------------------------------------
+   PAYMENT INSTRUCTION
+------------------------------------------------------------ */
+
+.payment-instruction {
+  max-width: 36rem;
+
+  margin: 1.5rem 0 0;
+
+  color: #666666;
+
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+
+/* ------------------------------------------------------------
+   MOBILE
+------------------------------------------------------------ */
+
+@media (max-width: 640px) {
+
+  .payment-methods-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-method {
+    padding: 1rem;
+
+    border-radius: 8px;
+  }
+
+}
+
+/* ============================================================
+   STEP 03 — CONFIRM
+============================================================ */
+
+
+/* ------------------------------------------------------------
+   REGISTRATION SUMMARY
+------------------------------------------------------------ */
+
+.registration-summary {
+  display: grid;
+
+  width: 100%;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  margin-bottom: 2rem;
+
+  border-top: 1px solid #111111;
+  border-left: 1px solid #111111;
+}
+
+.registration-summary > div {
+  display: flex;
+
+  min-width: 0;
+  min-height: 8.5rem;
+
+  flex-direction: column;
+  justify-content: space-between;
+
+  gap: 0.75rem;
+
+  border-right: 1px solid #111111;
+  border-bottom: 1px solid #111111;
+
+  padding: 1.2rem;
+}
+
+.registration-summary > div:nth-child(3) {
+  grid-column: 1 / -1;
+
+  min-height: 6.5rem;
+
+  color: #111111;
+  background: #e8f15a;
+}
+
+.registration-summary span {
+  color: #777777;
+
+  font-size: 0.55rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+
+  text-transform: uppercase;
+}
+
+.registration-summary > div:nth-child(3) span {
+  color: #555a00;
+}
+
+.registration-summary strong {
+  display: block;
+
+  min-width: 0;
+
+  color: #111111;
+
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  font-weight: 850;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+
+  overflow-wrap: anywhere;
+}
+
+.registration-summary > div:nth-child(3) strong {
+  font-size: clamp(1.75rem, 2.7vw, 2.6rem);
+  font-weight: 900;
+  letter-spacing: -0.055em;
+}
+
+.registration-summary small {
+  display: block;
+
+  color: #666666;
+
+  font-size: 0.66rem;
+  font-weight: 550;
+  line-height: 1.55;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* ------------------------------------------------------------
+   PAYMENT PROOF UPLOAD
+------------------------------------------------------------ */
+
+.proof-field {
+  width: 100%;
+
+  margin-top: 2rem;
+}
+
+.proof-label {
+  display: block;
+
+  margin-bottom: 0.65rem;
+
+  color: #111111;
+
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+.proof-upload {
+  position: relative;
+
+  display: flex;
+
+  width: 100%;
+  min-height: 10rem;
+
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  gap: 0.65rem;
+
+  border: 2px dashed #999999;
+
+  padding: 1.5rem;
+
+  cursor: pointer;
+
+  color: #111111;
+  background: #f6f6f6;
+
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+
+.proof-upload:hover {
+  border-color: #111111;
+  background: #f0f0f0;
+}
+
+.proof-upload:focus-within {
+  border-color: #111111;
+  box-shadow: 0 0 0 3px #e8f15a;
+}
+
+.proof-upload--selected {
+  border-style: solid;
+  border-color: #111111;
+
+  background: #f7facf;
+}
+
+.proof-upload input {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  margin: -1px;
+
+  overflow: hidden;
+
+  clip: rect(0, 0, 0, 0);
+
+  white-space: nowrap;
+}
+
+.proof-upload > span {
+  color: #777777;
+
+  font-size: 0.56rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+
+  text-transform: uppercase;
+}
+
+.proof-upload--selected > span {
+  color: #656b00;
+}
+
+.proof-upload > strong {
+  max-width: 100%;
+
+  color: #111111;
+
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 850;
+  line-height: 1.25;
+
+  overflow-wrap: anywhere;
+}
+
+.proof-upload > small {
+  color: #777777;
+
+  font-size: 0.62rem;
+  font-weight: 500;
+}
+
+
+/* ------------------------------------------------------------
    CONSENT
-   UNCHANGED
-======================================== */
+------------------------------------------------------------ */
 
 .consent-field {
   display: grid;
-  grid-template-columns: 1.2rem 1fr;
+
+  grid-template-columns: 1.2rem minmax(0, 1fr);
+
   align-items: start;
+
   gap: 0.75rem;
 
-  margin-top: 1.5rem;
+  margin-top: 1.75rem;
 }
 
 .consent-field input {
@@ -2001,19 +2702,20 @@ p {
 
   margin: 0.05rem 0 0;
 
-  accent-color: #111;
+  accent-color: #111111;
 }
 
 .consent-field label {
+  color: #111111;
+
   font-size: 0.66rem;
   line-height: 1.55;
 }
 
 
-/* ========================================
-   FORM ERROR
-   UNCHANGED
-======================================== */
+/* ------------------------------------------------------------
+   FORM ALERT
+------------------------------------------------------------ */
 
 .form-alert {
   margin-top: 1.2rem;
@@ -2031,24 +2733,24 @@ p {
 }
 
 
-/* ========================================
-   SUBMIT BUTTON
-   UNCHANGED
-======================================== */
+/* ------------------------------------------------------------
+   CONTACT FORM SUBMIT
+------------------------------------------------------------ */
 
 .form-submit {
   width: 100%;
+
   margin-top: 1.5rem;
 }
 
 
-/* ========================================
+/* ------------------------------------------------------------
    HONEYPOT
-   UNCHANGED
-======================================== */
+------------------------------------------------------------ */
 
 .honeypot {
   position: absolute;
+
   left: -9999px;
 
   width: 1px;
@@ -2058,22 +2760,22 @@ p {
 }
 
 
-/* ========================================
+/* ------------------------------------------------------------
    SUCCESS MESSAGE
-   UNCHANGED
-======================================== */
+------------------------------------------------------------ */
 
 .success-message {
   display: flex;
-  min-height: 25rem;
+
+  min-height: 28rem;
 
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
 
-  padding: clamp(1rem, 3vw, 3rem);
+  padding: clamp(1.5rem, 3vw, 3rem);
 
-  color: #111;
+  color: #111111;
   background: #e8f15a;
 }
 
@@ -2081,13 +2783,14 @@ p {
   display: grid;
 
   width: 3rem;
+
   aspect-ratio: 1;
 
   margin-bottom: 2rem;
 
   place-items: center;
 
-  border: 2px solid #111;
+  border: 2px solid #111111;
   border-radius: 50%;
 
   font-size: 1.4rem;
@@ -2095,6 +2798,8 @@ p {
 }
 
 .success-message h3 {
+  max-width: 10ch;
+
   margin: 0 0 1rem;
 
   font-size: clamp(2rem, 4vw, 4rem);
@@ -2113,9 +2818,9 @@ p {
 }
 
 
-/* ========================================
-   TABLET
-======================================== */
+/* ============================================================
+   REGISTRATION — TABLET / <= 900PX
+============================================================ */
 
 @media (max-width: 900px) {
 
@@ -2147,12 +2852,16 @@ p {
   .form-card {
     width: 100%;
   }
+
+  .wizard-heading h3 {
+    max-width: 14ch;
+  }
 }
 
 
-/* ========================================
-   MOBILE
-======================================== */
+/* ============================================================
+   REGISTRATION — MOBILE / <= 640PX
+============================================================ */
 
 @media (max-width: 640px) {
 
@@ -2178,25 +2887,38 @@ p {
   }
 
 
-  /* Allow the callout to stack only on small screens */
+  /* Left fee */
 
-  .registration-callout {
-    align-items: flex-start;
+  .registration-fee-price {
+    font-size: 1.7rem;
+  }
+
+
+  /* Left flow */
+
+  .registration-flow {
     flex-direction: column;
-    gap: 0.65rem;
+
+    align-items: flex-start;
+
+    gap: 0.9rem;
   }
 
-  .registration-callout span {
-    flex-shrink: 1;
+  .registration-flow-connector {
+    width: 1px;
+    height: 1.5rem;
 
-    text-align: left;
+    min-width: 0;
 
-    /* Prevents overflow on narrow phones */
-    white-space: normal;
+    margin-left: 0.25rem;
   }
 
 
-  /* Existing mobile form behavior */
+  /* Form */
+
+  .form-card {
+    padding: 1rem;
+  }
 
   .form-grid {
     grid-template-columns: 1fr;
@@ -2206,8 +2928,146 @@ p {
     grid-column: 1;
   }
 
-  .form-card {
+
+  /* Wizard progress */
+
+  .registration-wizard-progress {
+    margin-bottom: 2rem;
+  }
+
+  .registration-wizard-progress > div {
+    min-height: 3.8rem;
+
+    padding: 0.7rem 0.55rem;
+  }
+
+  .registration-wizard-progress span {
+    font-size: 0.48rem;
+  }
+
+  .registration-wizard-progress strong {
+    font-size: 0.56rem;
+    letter-spacing: 0.04em;
+  }
+
+
+  /* Wizard heading */
+
+  .wizard-heading {
+    margin-bottom: 2rem;
+  }
+
+  .wizard-heading h3 {
+    max-width: none;
+
+    font-size: clamp(2rem, 9vw, 2.8rem);
+  }
+
+  .wizard-heading p {
+    font-size: 0.78rem;
+  }
+
+
+  /* Payment total */
+
+  .payment-total {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 0.8rem;
+
+    padding: 1.25rem;
+  }
+
+  .payment-total strong {
+    font-size: 2.2rem;
+  }
+
+
+  /* QR cards become vertical */
+
+  .payment-methods-grid {
+    grid-template-columns: 1fr;
+
+    gap: 1rem;
+  }
+
+  .payment-method {
     padding: 1rem;
+  }
+
+  .payment-qr-wrap {
+    aspect-ratio: 4 / 5;
+
+    padding: 0.6rem;
+  }
+
+  .payment-method-footer {
+    align-items: flex-end;
+  }
+
+  .payment-method dl > div {
+    grid-template-columns: 1fr;
+
+    gap: 0.3rem;
+  }
+
+
+  /* Registration summary */
+
+  .registration-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .registration-summary > div,
+  .registration-summary > div:nth-child(3) {
+    grid-column: 1;
+
+    min-height: 6.5rem;
+  }
+
+
+  /* Proof */
+
+  .proof-upload {
+    min-height: 9rem;
+
+    padding: 1.2rem;
+  }
+
+
+  /* Actions */
+
+  .wizard-actions,
+  .wizard-actions--end {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 0.85rem;
+
+    justify-content: stretch;
+  }
+
+  .wizard-actions .button {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .wizard-back {
+    width: fit-content;
+
+    justify-self: start;
+  }
+
+
+  /* Success */
+
+  .success-message {
+    min-height: 24rem;
+
+    padding: 1.5rem;
   }
 }
 
