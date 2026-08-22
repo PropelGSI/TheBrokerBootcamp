@@ -253,6 +253,42 @@ export function SubmissionForm({
   const isRegistration =
     type === 'registration'
 
+const changeRegistrationStep = (
+  step: RegistrationStep,
+) => {
+  setRegistrationStep(step)
+
+  if (
+    typeof window === 'undefined' ||
+    !window.matchMedia(
+      '(max-width: 640px)',
+    ).matches
+  ) {
+    return
+  }
+
+  window.requestAnimationFrame(() => {
+    const target =
+      formRef.current?.querySelector<HTMLElement>(
+        '.registration-wizard-progress',
+      )
+
+    if (!target) return
+
+    const reducedMotion =
+      window.matchMedia(
+        '(prefers-reduced-motion: reduce)',
+      ).matches
+
+    target.scrollIntoView({
+      behavior:
+        reducedMotion
+          ? 'auto'
+          : 'smooth',
+      block: 'start',
+    })
+  })
+}
 
   const successMessage =
     isRegistration
@@ -372,7 +408,7 @@ export function SubmissionForm({
     })
 
 
-    setRegistrationStep(2)
+    changeRegistrationStep(2)
 
 
     track(
@@ -398,7 +434,7 @@ export function SubmissionForm({
     }
 
 
-    setRegistrationStep(3)
+    changeRegistrationStep(3)
 
 
     track(
@@ -1485,7 +1521,7 @@ export function SubmissionForm({
               type="button"
               onClick={() => {
                 setGeneralError('')
-                setRegistrationStep(1)
+                changeRegistrationStep(1)
               }}
             >
               ← Back
@@ -1736,7 +1772,7 @@ export function SubmissionForm({
               }
               onClick={() => {
                 setGeneralError('')
-                setRegistrationStep(2)
+                changeRegistrationStep(2)
               }}
             >
               ← Back

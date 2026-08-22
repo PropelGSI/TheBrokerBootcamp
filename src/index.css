@@ -357,26 +357,20 @@ p {
 }
 
 .wordmark {
-  display: inline-flex;
-  width: 7.8rem;
-  flex-direction: column;
-  align-items: flex-start;
-  color: #111;
-  font-size: 0.64rem;
-  font-weight: 900;
-  letter-spacing: 0.055em;
-  line-height: 1.05;
+  display: block;
+
+  width: 8.5rem;
+
+  flex-shrink: 0;
 }
 
-.wordmark strong {
-  display: inline-block;
-  margin-top: 0.16rem;
-  padding: 0.18rem 0.28rem 0.17rem;
-  color: #111;
-  background: #e8f15a;
-  font-size: 0.82rem;
-  font-weight: 900;
-  letter-spacing: 0.06em;
+.wordmark img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
 }
 
 .wordmark--inverted {
@@ -3872,10 +3866,11 @@ p {
 /* Wordmark */
 
 .footer .wordmark {
+  width: 10.5rem;
+
   margin-bottom: clamp(3.5rem, 6vw, 5.5rem);
 
-  transform: scale(1.25);
-  transform-origin: left top;
+  transform: none;
 }
 
 
@@ -4269,9 +4264,11 @@ p {
   /* Wordmark */
 
   .footer .wordmark {
+    width: 9.5rem;
+
     margin-bottom: 3.5rem;
 
-    transform: scale(1.1);
+    transform: none;
   }
 
 
@@ -4296,6 +4293,10 @@ p {
     white-space: normal;
   }
 }
+
+  .registration-wizard-progress {
+    scroll-margin-top: 7.5rem;
+  }
 
 
   /* Event panel */
